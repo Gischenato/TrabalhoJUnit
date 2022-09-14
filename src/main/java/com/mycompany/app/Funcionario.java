@@ -1,4 +1,4 @@
-package com.bcopstein;
+package com.mycompany.app;
 /*
 Para calcular o salário líquido de um funcionário deve-se descontar
 o INSS e o imposto de renda do seu salário bruto. O desconto de
@@ -40,7 +40,7 @@ public class Funcionario {
         if (this.salarioBruto <= limIRPF){
             return 0.0;
         }else{
-            return (this.salarioBruto-limIRPF*aliquotaIRPF);
+            return (this.salarioBruto-limIRPF)*aliquotaIRPF;
         }
     }
 
