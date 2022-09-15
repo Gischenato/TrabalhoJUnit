@@ -34,7 +34,9 @@ public class ContaCorrenteTest {
     @Test
     public void shouldUpgradeAccountCategory(){
         assertEquals("Silver", conta.getCategoria());
-        conta.deposito(50000);
+        conta.deposito(49999);
+        assertEquals("Silver", conta.getCategoria());
+        conta.deposito(1);
         assertEquals("Gold", conta.getCategoria());
         conta.deposito(200000);
         assertEquals("Platinum", conta.getCategoria());

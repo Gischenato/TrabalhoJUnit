@@ -8,27 +8,26 @@ public class FuncionarioTest {
 
     @Test
     public void getINSSOffPoint(){
-       Funcionario funcionario = new Funcionario(4999);
-       double valorCertoArredondado = Math.round(funcionario.getINSS() * 100.0)/100.0; // É preciso arredondar o número pois se não da um número com muitas casas decimais
-       assertEquals(224.96, valorCertoArredondado);
+       Funcionario funcionario = new Funcionario(111111);
+       assertEquals(4999.995, funcionario.getINSS());
     }
 
     @Test
     public void getINSSOnPoint(){
-       Funcionario funcionario = new Funcionario(5000);
-       assertEquals(225, funcionario.getINSS());
+       Funcionario funcionario = new Funcionario(111112);
+       assertEquals(5000, funcionario.getINSS());
     }
 
     @Test
     public void getINSSInPoint(){
-       Funcionario funcionario = new Funcionario(4000);
-       assertEquals(180, funcionario.getINSS());
+       Funcionario funcionario = new Funcionario(50000);
+       assertEquals(2250, funcionario.getINSS());
     }
 
     @Test
     public void getINSSOutPoint(){
-       Funcionario funcionario = new Funcionario(8000);
-       assertEquals(225, funcionario.getINSS());
+       Funcionario funcionario = new Funcionario(200000);
+       assertEquals(5000, funcionario.getINSS());
     }
 
     @Test
@@ -83,8 +82,8 @@ public class FuncionarioTest {
 
     @Test
     public void getSalarioLiquidoTest(){
-       Funcionario funcionario = new Funcionario(10000);
-       assertEquals(8875, funcionario.getSalarioLiquido());
+       Funcionario funcionario = new Funcionario(50000);
+       assertEquals(42050, funcionario.getSalarioLiquido());
     }
 
 }

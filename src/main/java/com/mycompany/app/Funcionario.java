@@ -29,10 +29,10 @@ public class Funcionario {
     }
 
     public double getINSS(){
-        if (this.salarioBruto < limINSS){
+        if (this.salarioBruto*aliquotaINSS <= limINSS){
             return this.salarioBruto * aliquotaINSS;
         }else{
-            return limINSS * aliquotaINSS;
+            return limINSS;
         }
     }
 
